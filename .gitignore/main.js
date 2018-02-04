@@ -32,7 +32,7 @@ kirby.on('message', message => {
 
   // la danse de kirby !
 kirby.on('message', message => {
-  if(message.content === "@Kirby#5862, peux-tu danser s'il te plait ?" ) {
+  if(message.content === "Kirby, peux-tu danser s'il te plait ?" ) {
          message.channel.sendMessage("(>^^)> <(^^<)");
          message.channel.sendMessage("v(^-^)v v(^-^)^ ^(^-^)v");
          message.channel.sendMessage("^(^-^)^");

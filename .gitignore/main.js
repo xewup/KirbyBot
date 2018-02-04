@@ -33,9 +33,11 @@ kirby.on('message', message => {
   // la danse de kirby !
 kirby.on('message', message => {
   if(message.content === "Kirby, peux-tu danser s'il te plait ?" ) {
+         kirby.user.setGame("DANSER");
          message.channel.sendMessage("(>^^)> <(^^<)");
          message.channel.sendMessage("v(^-^)v v(^-^)^ ^(^-^)v");
          message.channel.sendMessage("^(^-^)^");
+         kirby.user.setGame("manger tout ce qu'il trouve");
   }
 });
 

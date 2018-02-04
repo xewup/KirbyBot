@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const kirby = new Discord.Client();
 const paul = new Discord.Client();
+var sleep = require('sleep');
 
 kirby.login("Mzg0NzkzNjkwNDE5NDk0OTMy.DUUumA.cVam-1ZsawNxKHXi6WzZD6YV35g");
 paul.login("Mzg0Nzk3MDQyNDc3ODkxNTg0.DUU1TQ.2U84LXbB_7CkPC56FwpyJRS0A3Y");
@@ -34,9 +35,13 @@ kirby.on('message', message => {
 kirby.on('message', message => {
   if(message.content === "Kirby, peux-tu danser s'il te plait ?" ) {
          kirby.user.setGame("DANSER");
+         sleep.sleep(1);
+         sleep.usleep();
          message.channel.sendMessage("(>^^)> <(^^<)");
          message.channel.sendMessage("v(^-^)v v(^-^)^ ^(^-^)v");
          message.channel.sendMessage("^(^-^)^");
+         sleep.sleep(1);
+         sleep.usleep();
          kirby.user.setGame("manger tout ce qu'il trouve");
   }
 });

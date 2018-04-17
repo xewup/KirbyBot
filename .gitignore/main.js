@@ -10,12 +10,12 @@ paul.login("Mzg0Nzk3MDQyNDc3ODkxNTg0.DUU1TQ.2U84LXbB_7CkPC56FwpyJRS0A3Y");
 // Démarrage.
 kirby.on('ready', function() {
   console.log(` Kirby Prêt !`);
-  kirby.user.setGame("manger tout ce qu'il trouve");
+  kirby.user.setActivity("manger tout ce qu'il trouve");
 });
 
 paul.on('ready', function() {
   console.log(`Paul Prêt !`);
-  paul.user.setGame("chasser le dino");
+  paul.user.setActivity("chasser le dino");
   
 });
 
@@ -35,11 +35,11 @@ kirby.on('message', message => {
   // la danse de kirby !
 kirby.on('message', message => {
   if(message.content === "Kirby, peux-tu danser s'il te plait ?" ) {
-         kirby.user.setGame("DANSER");
+         kirby.user.setActivity("DANSER");
          message.channel.sendMessage("(>^^)> <(^^<)");
          message.channel.sendMessage("v(^-^)v v(^-^)^ ^(^-^)v");
          message.channel.sendMessage("^(^-^)^");
-         kirby.user.setGame("manger tout ce qu'il trouve");
+         kirby.user.setActivity("manger tout ce qu'il trouve");
   }
 });
 

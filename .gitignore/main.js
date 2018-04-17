@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 const kirby = new Discord.Client();
 const paul = new Discord.Client();
 
+var prefix = ("!");
+
 kirby.login("Mzg0NzkzNjkwNDE5NDk0OTMy.DUUumA.cVam-1ZsawNxKHXi6WzZD6YV35g");
 paul.login("Mzg0Nzk3MDQyNDc3ODkxNTg0.DUU1TQ.2U84LXbB_7CkPC56FwpyJRS0A3Y");
 
@@ -48,8 +50,15 @@ kirby.on("guildMemberAdd", function(member) {
     member.addRole(role);
     });
 
-
 // Un membre part.
 paul.on("guildMemberRemove", function(member) {
      member.guild.channels.find("name","general").send(`Au revoir ${member.user.username} ! Encore un qui quitte le serveur.. Kirby tu pues trop de la bouche !`);
       });
+
+// Ajout de rôles avec la commande !iam
+kirby.on('message', message => {
+    if(message.content === prefix + "jeu" + "Fortnite") {
+    let role = member.guild.roles.find("name", "Fortnite");
+    member.guild.channels.find("name","general").send(`${member.user.username} est un joueur Fortnite. Rôle ajouté !`);
+    member.addRole(role);
+}

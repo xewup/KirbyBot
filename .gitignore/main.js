@@ -62,4 +62,5 @@ if(message.content === prefix + "fortnite") {
     let role = member.guild.roles.find("name", "Fortnite");
     member.guild.channels.find("name","multijoueur").send(`${member.user.username} possède Fortnite. Rôle ajouté !`);
     member.addRole(role);
-}}}));
+  })
+}});

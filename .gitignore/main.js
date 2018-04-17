@@ -61,4 +61,4 @@ kirby.on('message', message => {
     let role = member.guild.roles.find("name", "Fortnite");
     member.guild.channels.find("name","general").send(`${member.user.username} est un joueur Fortnite. Rôle ajouté !`);
     member.addRole(role);
-}};
+});

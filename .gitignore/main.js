@@ -56,9 +56,9 @@ paul.on("guildMemberRemove", function(member) {
       });
 
 // Ajout de rôles avec la commande !iam
-kirby.on('message', message => {
-    if(message.content === prefix + "fortnite") {
+kirby.on("guildMemberAdd", function(member) {
+  if(message.content === prefix + "fortnite") {
     let role = member.guild.roles.find("name", "Fortnite");
+    member.guild.channels.find("name","multijoueur").send(`${member.user.username} possède Fortnite. Rôle ajouté !`);
     member.addRole(role);
-    message.reply(" est un joueur Fortnite. Rôle ajouté !");
 }});

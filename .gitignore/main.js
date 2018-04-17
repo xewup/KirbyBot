@@ -59,6 +59,6 @@ paul.on("guildMemberRemove", function(member) {
 kirby.on('message', message => {
     if(message.content === prefix + "Fortnite") {
     let role = member.guild.roles.find("name", "Fortnite");
-    member.guild.channels.find("name","general").send(`${member.user.username} est un joueur Fortnite. Rôle ajouté !`);
     member.addRole(role);
+    message.reply(" est un joueur Fortnite. Rôle ajouté !");
 }});

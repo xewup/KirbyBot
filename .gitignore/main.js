@@ -22,13 +22,13 @@ paul.on('ready', function() {
 // Surtout au mois de mai !
 paul.on('message', message => {
   if(message.content === "Mais" ) {
-         message.channel.sendMessage("Oui car il y a toujours un mais.");
+         message.channel.send("Oui car il y a toujours un mais.");
   }
 });
 
 kirby.on('message', message => {
   if(message.content === "Oui car il y a toujours un mais." ) {
-         message.channel.sendMessage("Surtout au mois de Mai.");
+         message.channel.send("Surtout au mois de Mai.");
   }
 });
 
@@ -36,9 +36,9 @@ kirby.on('message', message => {
 kirby.on('message', message => {
   if(message.content === "Kirby, peux-tu danser s'il te plait ?" ) {
          kirby.user.setActivity("DANSER");
-         message.channel.sendMessage("(>^^)> <(^^<)");
-         message.channel.sendMessage("v(^-^)v v(^-^)^ ^(^-^)v");
-         message.channel.sendMessage("^(^-^)^");
+         message.channel.send("(>^^)> <(^^<)");
+         message.channel.send("v(^-^)v v(^-^)^ ^(^-^)v");
+         message.channel.send("^(^-^)^");
          kirby.user.setActivity("manger tout ce qu'il trouve");
   }
 });

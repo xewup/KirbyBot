@@ -54,11 +54,3 @@ kirby.on("guildMemberAdd", function(member) {
 paul.on("guildMemberRemove", function(member) {
      member.guild.channels.find("name","general").send(`Au revoir ${member.user.username} ! Encore un qui quitte le serveur.. Kirby tu pues trop de la bouche !`);
       });
-
-// Ajout de rôles avec la commande !iam
-kirby.on('message', message, function(member) {
-if(message.content === prefix + "fortnite") {
-    let role = member.guild.roles.find("name", "Fortnite");
-    member.guild.channels.find("name","multijoueur").send(`${member.user.username} possède Fortnite. Rôle ajouté !`);
-    member.addRole(role);
-  }});

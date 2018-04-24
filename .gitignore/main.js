@@ -49,7 +49,6 @@ kirby.on("guildMemberAdd", function(member) {
     member.guild.channels.find("name","general").send(`Bienvenue sur le serveur ${member.user.username}. N'Hésite pas à faire un tour sur les #regles et à te présenter dans #presentations.`);
     member.addRole(role);
     setTimeout(function (member) {
-    member.removeRole(role);
     let role = member.guild.roles.find("name", "Abonnés");
     member.addRole(role); }, 10000);
     });

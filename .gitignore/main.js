@@ -52,6 +52,9 @@ member.addRole('398895794771722265');
 kirby.on("guildMemberAdd", member => {
   member.guild.channels.find("name","general").send(`Bienvenue sur le serveur ${member.user.username}. N'Hésite pas à faire un tour sur les #regles et à te présenter dans #presentations.`);
   member.addRole('438381490255036437');
+  member.createDM().then(channel => {
+      return channel.send(`Salut ${member.user.username}. Je suis Kirby du serveur Discord de XeWuP que tu viens de rejoindre. \nPour l'instant, tu n'as seulement accès qu'au salon textuel #regles afin de les lire et de comprendre le fonctionnement. \nNe t'inquiète pas, dans 5 minutes tu pourras accéder librement au serveur. \n \n Sur ce, moi et l'équipe de modération te souhaite la bienvenue sur le serveur !\n - Kirby. `)
+    });
   var leMembre = member;
   setTimeout(function (leMembre) {
   member.removeRole('438381490255036437');

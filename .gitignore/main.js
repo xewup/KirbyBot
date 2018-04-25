@@ -2,7 +2,8 @@ const Discord = require('discord.js');
 const kirby = new Discord.Client();
 const paul = new Discord.Client();
 
-var prefix = ("!")
+var prefix = ("/")
+var randnum = 0
 
 kirby.login("Mzg0NzkzNjkwNDE5NDk0OTMy.DUUumA.cVam-1ZsawNxKHXi6WzZD6YV35g");
 paul.login("Mzg0Nzk3MDQyNDc3ODkxNTg0.DUU1TQ.2U84LXbB_7CkPC56FwpyJRS0A3Y");
@@ -65,3 +66,19 @@ kirby.on("guildMemberAdd", member => {
 paul.on("guildMemberRemove", member => {
      member.guild.channels.find("name","general").send(`Au revoir ${member.user.username} ! Encore un qui quitte le serveur.. Kirby tu pues trop de la bouche !`);
       });
+
+// Lancer de dé
+
+function random(min, max) {
+    min = Math.ceil(0);
+    max = Math.floor(100);
+    randnum = Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+paul.on('message', message => {
+  random();
+if (message.content === prefix + "roll"){
+  message.reply(`Tu as tiré un ${randnum}`);
+  console.log(randnum);
+}
+});

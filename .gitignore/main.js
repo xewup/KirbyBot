@@ -44,16 +44,21 @@ kirby.on('message', message => {
 });
 
 // Un membre arrive.
-kirby.on("guildMemberAdd", function(member) {
-    let role = member.guild.roles.find("name", "Nouveaux");
-    member.guild.channels.find("name","general").send(`Bienvenue sur le serveur ${member.user.username}. N'Hésite pas à faire un tour sur les #regles et à te présenter dans #presentations.`);
-    member.addRole(role);
-    setTimeout(function (member) {
-    let role = member.guild.roles.find("name", "Abonnés");
-    member.addRole(role); }, 10000);
-    });
+
+function Abonnes(guildMemberAdd, member) {
+member.addRole('398895794771722265');
+};
+
+kirby.on("guildMemberAdd", member => {
+  member.guild.channels.find("name","general").send(`Bienvenue sur le serveur ${member.user.username}. N'Hésite pas à faire un tour sur les #regles et à te présenter dans #presentations.`);
+  member.addRole('438381490255036437');
+  var leMembre = member;
+  setTimeout(function (leMembre) {
+  member.removeRole('438381490255036437');
+  member.addRole('398895794771722265'); }, 300000);
+});
 
 // Un membre part.
-paul.on("guildMemberRemove", function(member) {
+paul.on("guildMemberRemove", member => {
      member.guild.channels.find("name","general").send(`Au revoir ${member.user.username} ! Encore un qui quitte le serveur.. Kirby tu pues trop de la bouche !`);
       });

@@ -54,7 +54,7 @@ kirby.on("guildMemberAdd", member => {
   member.guild.channels.find("name","general").send(`Bienvenue sur le serveur ${member.user.username}. N'Hésite pas à faire un tour sur les #regles et à te présenter dans #presentations.`);
   member.addRole('438381490255036437');
   member.createDM().then(channel => {
-      return channel.send(`Salut ${member.user.username}. Je suis Kirby du serveur Discord de XeWuP que tu viens de rejoindre. \nPour l'instant, tu n'as seulement accès qu'au salon textuel #regles afin de les lire et de comprendre le fonctionnement. \nNe t'inquiète pas, dans 5 minutes tu pourras accéder librement au serveur. \n \n Sur ce, l'équipe de modération et moi te souhaitons la bienvenue sur le serveur !\n - Kirby. `)
+      return channel.send(`Salut ${member.user.username}. Je suis Kirby du serveur Discord de XeWuP que tu viens de rejoindre. \nPour l'instant, tu n'as seulement accès qu'au salon textuel #regles afin de les lire et de comprendre le fonctionnement. \nNe t'inquiète pas, dans 5 minutes tu pourras accéder librement au serveur. \n \n Sur ce, moi et l'équipe de modération te souhaite la bienvenue sur le serveur !\n - Kirby. `)
     });
   var leMembre = member;
   setTimeout(function (leMembre) {
@@ -82,3 +82,126 @@ if (message.content === prefix + "roll"){
   console.log(randnum);
 }
 });
+
+  // Tous les jeux !
+
+// Fortnite
+
+  paul.on('message', message => {
+    
+    if (message.content === prefix + "fortnite"){
+      console.log(`Fortnite donné à ${message.member.user.username}`);
+      message.member.addRole('435715421325361152');
+      message.channel.send(`${message.member.user.username} a maintenant le rôle "Fortnite" :) !`);
+      }
+});
+
+// CS:GO
+
+paul.on('message', message => {
+  
+  if (message.content === prefix + "csgo"){
+    console.log(`CS:GO donné à ${message.member.user.username}`);
+    message.member.addRole('435715658307600385');
+    message.channel.send(`${message.member.user.username} a maintenant le rôle "CS:GO" :) !`);
+    }
+});
+
+// THUG PRO
+
+kirby.on('message', message => {
+  
+  if (message.content === prefix + "thugpro"){
+    console.log(`THUG Pro donné à ${message.member.user.username}`);
+    message.member.addRole('435716845664993280');
+    message.channel.send(`${message.member.user.username} a maintenant le rôle "THUG Pro" ^^ !`);
+    }
+});
+
+// Unreal Tournament
+
+kirby.on('message', message => {
+  
+  if (message.content === prefix + "unrealtournament"){
+    console.log(`UT99 donné à ${message.member.user.username}`);
+    message.member.addRole('438790253503840277');
+    message.channel.send(`${message.member.user.username} a maintenant le rôle "Unreal Tournament" ^^ !`);
+    }
+});
+
+// PAYDAY 2
+
+paul.on('message', message => {
+  
+  if (message.content === prefix + "payday2"){
+    console.log(`PAYDAY2 donné à ${message.member.user.username}`);
+    message.member.addRole('437608969813622795');
+    message.channel.send(`${message.member.user.username} a maintenant le rôle "PAYDAY 2" :^D !`);
+    }
+});
+
+// Minecraft
+
+paul.on('message', message => {
+  
+  if (message.content === prefix + "minecraft"){
+    console.log(`Minecraft donné à ${message.member.user.username}`);
+    message.member.addRole('435720619301142528');
+    message.channel.send(`${message.member.user.username} a maintenant le rôle "Minecraft" :^D !`);
+    }
+});
+
+// PUBG
+
+kirby.on('message', message => {
+  
+  if (message.content === prefix + "pubg"){
+    console.log(`PUBG donné à ${message.member.user.username}`);
+    message.member.addRole('435715926579609600');
+    message.channel.send(`${message.member.user.username} est désormais un joueur "PUBG".`);
+    }
+});
+
+// Rocket League
+
+kirby.on('message', message => {
+  
+  if (message.content === prefix + "rocketleague"){
+    console.log(`RL donné à ${message.member.user.username}`);
+    message.member.addRole('435715738993557505');
+    message.channel.send(`${message.member.user.username} est désormais un joueur "Rocket League".`);
+    }
+});
+
+// Garry's Mod
+
+paul.on('message', message => {
+  
+  if (message.content === prefix + "gmod"){
+    console.log(`gmod donné à ${message.member.user.username}`);
+    message.member.addRole('435715379738968065');
+    message.channel.send(`${message.member.user.username} a le jeu "Garry's Mod", n'hésitez pas à le solliciter pour jouer avec lui !`);
+    }
+})
+
+// GTA V
+
+paul.on('message', message => {
+  
+  if (message.content === prefix + "gtav"){
+    console.log(`GTA V donné à ${message.member.user.username}`);
+    message.member.addRole('435715361401208842');
+    message.channel.send(`${message.member.user.username} a le jeu "GTA V", n'hésitez pas à le solliciter pour jouer avec lui !`);
+    }
+})
+
+// overwatch
+
+kirby.on('message', message => {
+  
+  if (message.content === prefix + "overwatch"){
+    console.log(`Overwatch donné à ${message.member.user.username}`);
+    message.member.addRole('435715315339362304');
+    message.channel.send(`Overwatch ? ${message.member.user.username} ne pouvait pas ne pas l'avoir !`);
+    }
+})

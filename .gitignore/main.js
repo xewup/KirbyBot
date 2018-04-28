@@ -59,7 +59,7 @@ kirby.on("guildMemberAdd", member => {
   var leMembre = member;
   setTimeout(function (leMembre) {
   member.removeRole('438381490255036437');
-  member.addRole('398895794771722265'); }, 300000);
+  member.addRole('398895794771722265'); }, 150000);
 });
 
 // Un membre part.

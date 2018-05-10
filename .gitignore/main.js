@@ -240,7 +240,7 @@ paul.on('message', message => {
             .setTitle(`Informations sur le membre ${message.author.username} :`)
             .setColor('#00BFFF')
             .setDescription("Affichage des statistiques.")
-            .addField("Tu es inscrit depuis le:", `${message.author.createdAt}`)
+            .addField("Tu es inscrit depuis le:", `${message.author.joinedAt}`)
             .addField("Nombre d'XP:", `${xpfinal[1]} points d'expérience`)
             .setFooter("Bravo ! :)")
         message.channel.send({embed: xp_embed});

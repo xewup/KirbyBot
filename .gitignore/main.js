@@ -5,41 +5,19 @@ const paul = new Discord.Client();
 kirby.login("Mzg0NzkzNjkwNDE5NDk0OTMy.DUUumA.cVam-1ZsawNxKHXi6WzZD6YV35g");
 paul.login("Mzg0Nzk3MDQyNDc3ODkxNTg0.DUU1TQ.2U84LXbB_7CkPC56FwpyJRS0A3Y");
 
-var adapter = new LocalStorage('db')
-var db = low(adapter)
-const express = require('express')
-const bodyParser = require('body-parser')
-const low = require('lowdb')
-const FileAsync = require('lowdb/adapters/FileAsync')
+import low from 'lowdb'
+import LocalStorage from 'lowdb/adapters/LocalStorage'
 
-// Create server
-const app = express()
-app.use(bodyParser.json())
+const adapter = new LocalStorage('db')
+const db = low(adapter)
 
-// Create database instance and start server
-const adapter = new FileAsync('db.json')
-low(adapter)
-  .then(db => {
-    // Routes
-    // GET /posts/:id
-    app.get('/posts/:id', (req, res) => {
-      const post = db.get('posts')
-        .find({ id: req.params.id })
-        .value()
+db.defaults({ posts: [] })
+  .write()
 
-      res.send(post)
-    })
-
-    // POST /posts
-    app.post('/posts', (req, res) => {
-      db.get('posts')
-        .push(req.body)
-        .last()
-        .assign({ id: Date.now().toString() })
-        .write()
-        .then(post => res.send(post))
-    })
-
+// Data is automatically saved to localStorage
+db.get('posts')
+  .push({ title: 'lowdb' })
+  .write()
 
 db.defaults({ histoires: [], xp: []}).write()
 

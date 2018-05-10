@@ -1,9 +1,12 @@
 const Discord = require('discord.js');
+
 const kirby = new Discord.Client();
 const paul = new Discord.Client();
+kirby.login("Mzg0NzkzNjkwNDE5NDk0OTMy.DUUumA.cVam-1ZsawNxKHXi6WzZD6YV35g");
+paul.login("Mzg0Nzk3MDQyNDc3ODkxNTg0.DUU1TQ.2U84LXbB_7CkPC56FwpyJRS0A3Y");
+
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
-
 const adapter = new FileSync('database.json');
 const db = low(adapter);
 
@@ -12,8 +15,6 @@ db.defaults({ histoires: [], xp: []}).write()
 var prefix = ("/")
 var randnum = 0
 
-kirby.login("Mzg0NzkzNjkwNDE5NDk0OTMy.DUUumA.cVam-1ZsawNxKHXi6WzZD6YV35g");
-paul.login("Mzg0Nzk3MDQyNDc3ODkxNTg0.DUU1TQ.2U84LXbB_7CkPC56FwpyJRS0A3Y");
 
 // Démarrage.
 kirby.on('ready', function() {
@@ -189,7 +190,7 @@ paul.on('message', message => {
     message.member.addRole('435715379738968065');
     message.channel.send(`${message.member.user.username} a le jeu "Garry's Mod", n'hésitez pas à le solliciter pour jouer avec lui !`);
     }
-})
+});
 
 // GTA V
 
@@ -200,7 +201,7 @@ paul.on('message', message => {
     message.member.addRole('435715361401208842');
     message.channel.send(`${message.member.user.username} a le jeu "GTA V", n'hésitez pas à le solliciter pour jouer avec lui !`);
     }
-})
+});
 
 // overwatch
 
@@ -211,7 +212,7 @@ kirby.on('message', message => {
     message.member.addRole('435715315339362304');
     message.channel.send(`Overwatch ? ${message.member.user.username} ne pouvait pas ne pas l'avoir !`);
     }
-})
+});
 
 // Système d'XP
 
@@ -244,4 +245,5 @@ paul.on('message', message => {
             .setFooter("Bravo ! :)")
         message.channel.send({embed: xp_embed});
 
-}}})
+}}
+});

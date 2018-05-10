@@ -5,8 +5,8 @@ const paul = new Discord.Client();
 kirby.login("Mzg0NzkzNjkwNDE5NDk0OTMy.DUUumA.cVam-1ZsawNxKHXi6WzZD6YV35g");
 paul.login("Mzg0Nzk3MDQyNDc3ODkxNTg0.DUU1TQ.2U84LXbB_7CkPC56FwpyJRS0A3Y");
 
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('database.json');
 const db = low(adapter);
 
@@ -14,7 +14,6 @@ db.defaults({ histoires: [], xp: []}).write()
 
 var prefix = ("/")
 var randnum = 0
-
 
 // Démarrage.
 kirby.on('ready', function() {
@@ -240,10 +239,9 @@ paul.on('message', message => {
             .setTitle(`Informations sur le membre ${message.author.username} :`)
             .setColor('#00BFFF')
             .setDescription("Affichage des statistiques.")
-            .addField(`Tu es inscrit depuis le:`, `${message.author.createdAt}`)
-            .addField(`Nombre d'XP:`, `${xpfinal[1]} points d'expérience`)
-            .setFooter("Bravo ! :)")
+            .addField("Tu es inscrit depuis le:", `${message.author.createdAt}`)
+            .addField("Nombre d'XP:", `${xpfinal[1]} points d'expérience`)
+            .setFooter("Bravo ! ^^")
         message.channel.send({embed: xp_embed});
 
-}}
-});
+}}})

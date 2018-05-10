@@ -1,6 +1,13 @@
 const Discord = require('discord.js');
 const kirby = new Discord.Client();
 const paul = new Discord.Client();
+const low = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
+
+const adapter = new FileSync('database.json');
+const db = low(adapter);
+
+db.defaults({ histoires: [], xp: []}).write()
 
 var prefix = ("/")
 var randnum = 0
@@ -59,7 +66,7 @@ kirby.on("guildMemberAdd", member => {
   var leMembre = member;
   setTimeout(function (leMembre) {
   member.removeRole('438381490255036437');
-  member.addRole('398895794771722265'); }, 150000);
+  member.addRole('398895794771722265'); }, 300000);
 });
 
 // Un membre part.
@@ -205,3 +212,36 @@ kirby.on('message', message => {
     message.channel.send(`Overwatch ? ${message.member.user.username} ne pouvait pas ne pas l'avoir !`);
     }
 })
+
+// Système d'XP
+
+paul.on('message', message => { 
+
+    var msgauthor = message.author.id;
+
+    if(message.author.bot)return;
+
+    if(!db.get("xp").find({user: msgauthor}).value()){
+        db.get("xp").push({user: msgauthor, xp: 1}).write();
+    }else{
+        var userxpdb = db.get("xp").filter({user: msgauthor}).find('xp').value();
+        console.log(userxpdb);
+        var userxp = Object.values(userxpdb)
+        console.log(userxp)
+        console.log(`Nombre d'XP : ${userxp[1]}`)
+
+        db.get("xp").find({user: msgauthor}).assign({user: msgauthor, xp: userxp[1] += 1}).write();
+
+    if (message.content === prefix + "stats"){
+        var xp = db.get("xp").filter({user: msgauthor}).find('xp').value()
+        var xpfinal = Object.values(xp);
+        var xp_embed = new Discord.RichEmbed()
+            .setTitle(`Informations sur le membre ${message.author.username} :`)
+            .setColor('#00BFFF')
+            .setDescription("Affichage des statistiques.")
+            .addField(`Tu es inscrit depuis le:`, `${message.author.createdAt}`)
+            .addField(`Nombre d'XP:`, `${xpfinal[1]} points d'expérience`)
+            .setFooter("Bravo ! :)")
+        message.channel.send({embed: xp_embed});
+
+}}})

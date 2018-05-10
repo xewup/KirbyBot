@@ -218,7 +218,7 @@ kirby.on('message', message => {
 
 paul.on('message', message => { 
 
-    var msgauthor = message.author.id;
+    var msgauthor = message.author.tag;
 
     if(message.author.bot)return;
 

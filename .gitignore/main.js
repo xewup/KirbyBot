@@ -5,19 +5,10 @@ const paul = new Discord.Client();
 kirby.login("Mzg0NzkzNjkwNDE5NDk0OTMy.DUUumA.cVam-1ZsawNxKHXi6WzZD6YV35g");
 paul.login("Mzg0Nzk3MDQyNDc3ODkxNTg0.DUU1TQ.2U84LXbB_7CkPC56FwpyJRS0A3Y");
 
-import low from 'lowdb'
-import LocalStorage from 'lowdb/adapters/LocalStorage'
-
-const adapter = new LocalStorage('db')
-const db = low(adapter)
-
-db.defaults({ posts: [] })
-  .write()
-
-// Data is automatically saved to localStorage
-db.get('posts')
-  .push({ title: 'lowdb' })
-  .write()
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+const adapter = new FileSync('database.json')
+const db = low(adapter);
 
 db.defaults({ histoires: [], xp: []}).write()
 

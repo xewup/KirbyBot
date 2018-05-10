@@ -7,8 +7,8 @@ paul.login("Mzg0Nzk3MDQyNDc3ODkxNTg0.DUU1TQ.2U84LXbB_7CkPC56FwpyJRS0A3Y");
 
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
-const adapter = new FileSync('database.json')
-const db = low(adapter);
+var adapter = new LocalStorage('db')
+var db = low(adapter)
 
 db.defaults({ histoires: [], xp: []}).write()
 

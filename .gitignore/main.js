@@ -246,36 +246,3 @@ kirby.on('message', message => {
     message.channel.send(`Overwatch ? ${message.member.user.username} ne pouvait pas ne pas l'avoir !`);
     }
 });
-
-// Système d'XP
-
-paul.on('message', message => { 
-
-    var msgauthor = message.author.tag;
-
-    if(message.author.bot)return;
-
-    if(!db.get("xp").find({user: msgauthor}).value()){
-        db.get("xp").push({user: msgauthor, xp: 1}).write();
-    }else{
-        var userxpdb = db.get("xp").filter({user: msgauthor}).find('xp').value();
-        console.log(userxpdb);
-        var userxp = Object.values(userxpdb)
-        console.log(userxp)
-        console.log(`Nombre d'XP : ${userxp[1]}`)
-
-        db.get("xp").find({user: msgauthor}).assign({user: msgauthor, xp: userxp[1] += 1}).write();
-
-    if (message.content === prefix + "stats"){
-        var xp = db.get("xp").filter({user: msgauthor}).find('xp').value()
-        var xpfinal = Object.values(xp);
-        var xp_embed = new Discord.RichEmbed()
-            .setTitle(`Informations sur le membre ${message.author.username} :`)
-            .setColor('#00BFFF')
-            .setDescription("Affichage des statistiques.")
-            .addField("Tu es inscrit depuis le:", `${message.author.createdAt}`)
-            .addField("Nombre d'XP:", `${xpfinal[1]} points d'expérience`)
-            .setFooter("Bravo ! :)")
-        message.channel.send({embed: xp_embed});
-
-}}})

@@ -216,7 +216,7 @@ kirby.on('message', message => {
 
 // Garry's Mod
 
-paul.on('message', message => {
+rudolph.on('message', message => {
   
   if (message.content === prefix + "gmod"){
     console.log(`gmod donné à ${message.member.user.username}`);
@@ -238,7 +238,7 @@ paul.on('message', message => {
 
 // overwatch
 
-kirby.on('message', message => {
+rudolph.on('message', message => {
   
   if (message.content === prefix + "overwatch"){
     console.log(`Overwatch donné à ${message.member.user.username}`);

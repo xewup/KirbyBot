@@ -32,7 +32,7 @@ paul.on('ready', function() {
 
 rudolph.on('ready', function() {
   console.log(`Rudolph Prêt !`);
-  rudolp^h.user.setActivity("chercher sa maman");
+  rudolph.user.setActivity("chercher sa maman");
   
 });
 

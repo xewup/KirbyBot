@@ -2,8 +2,10 @@ const Discord = require('discord.js');
 
 const kirby = new Discord.Client();
 const paul = new Discord.Client();
+const rudolph = new Discord.Client();
 kirby.login("Mzg0NzkzNjkwNDE5NDk0OTMy.DUUumA.cVam-1ZsawNxKHXi6WzZD6YV35g");
 paul.login("Mzg0Nzk3MDQyNDc3ODkxNTg0.DUU1TQ.2U84LXbB_7CkPC56FwpyJRS0A3Y");
+rudolph.login("NDUwMjE3NjU2Njc5NzkyNjQw.DewBaw.nkPZbBe6IXsIigHTs4fXdez2Mgc");
 
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
@@ -18,7 +20,7 @@ var randnum = 0
 
 // Démarrage.
 kirby.on('ready', function() {
-  console.log(` Kirby Prêt !`);
+  console.log(`Kirby Prêt !`);
   kirby.user.setActivity("manger tout ce qu'il trouve");
 });
 
@@ -26,6 +28,37 @@ paul.on('ready', function() {
   console.log(`Paul Prêt !`);
   paul.user.setActivity("chasser le dino");
   
+});
+
+rudolph.on('ready', function() {
+  console.log(`Rudolph Prêt !`);
+  paul.user.setActivity("chercher sa maman");
+  
+});
+
+// Salut
+rudolph.on('message', message => {
+  if(message.content === "Salut" ) {
+         message.channel.send("Salut les copains !");
+  }
+});
+
+rudolph.on('message', message => {
+  if(message.content === "salut" ) {
+         message.channel.send("Coucou ! :)");
+  }
+});
+
+rudolph.on('message', message => {
+  if(message.content === "bonsoir" ) {
+         message.channel.send("Coucou ! :)");
+  }
+});
+
+rudolph.on('message', message => {
+  if(message.content === "Bonsoir" ) {
+         message.channel.send("Salut les amis ! :3");
+  }
 });
 
 // Surtout au mois de mai !

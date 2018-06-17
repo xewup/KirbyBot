@@ -3,8 +3,9 @@ const Discord = require('discord.js');
 const kirby = new Discord.Client();
 const paul = new Discord.Client();
 const rudolph = new Discord.Client();
-kirby.login(process.env.TOKEN);
-paul.login(process.env.TOKEN1);
+const config = require("./config.json");
+kirby.login(config.token);
+paul.login(config.token1);
 
 var prefix = ("/")
 var randnum = 0
@@ -24,7 +25,7 @@ paul.on('ready', function() {
 
 // Surtout au mois de mai !
 paul.on('message', message => {
-  if(message.content === "Mais" ) {
+  if(message.content.startsWith("Mais")) {
          message.channel.send("Oui car il y a toujours un mais.");
   }
 });

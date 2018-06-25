@@ -1,11 +1,9 @@
 const Discord = require('discord.js');
-const { token, token1 } = require('config.json');
 const kirby = new Discord.Client();
 const paul = new Discord.Client();
 
 var prefix = ("/")
 var randnum = 0
-
 
 kirby.login(token);
 paul.login(token1);

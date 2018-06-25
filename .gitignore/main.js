@@ -2,11 +2,13 @@ const Discord = require('discord.js');
 const { token, token1 } = require('config.json');
 const kirby = new Discord.Client();
 const paul = new Discord.Client();
-const rudolph = new Discord.Client();
 
 var prefix = ("/")
 var randnum = 0
 
+
+kirby.login(token);
+paul.login(token1);
 
 // Démarrage.
 kirby.on('ready', function() {
@@ -43,7 +45,3 @@ kirby.on('message', message => {
          kirby.user.setActivity("manger tout ce qu'il trouve");
   }
 });
-
-
-kirby.login(token);
-paul.login(token1);
